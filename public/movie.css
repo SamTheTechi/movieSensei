@@ -1,0 +1,688 @@
+:root{
+    --primary-color:black;
+    --secondary-color: rgb(50, 50, 50);
+    --tertiary-color: #F99417;
+    --text-color: #F5F5F5;
+}
+.body{
+    background-color: var(--secondary-color);
+}
+*, *::after, *::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 0px;
+    font-size: 1.15rem;
+    font-family: 'Tilt Neon', sans-serif;
+    color: var(--text-color);
+}
+
+.header{
+    border-bottom: 0.1rem solid var(--secondary-color);
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.4);
+    backdrop-filter:blur(8px);
+    position: fixed;
+    z-index: 2;
+    padding-left: 2vw;
+    padding-right: 8vw;
+}
+
+.header form {
+    width: 35%;
+    border-radius: 10px;
+    color:var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header form select {
+    background-color:var(--tertiary-color);
+    color:var(--text-color);
+    width: 30%;
+    border: 5px solid var(--secondary-color);
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+.header form input {
+    width: 60%;
+    background-color:var(--text-color);
+    border: 5px solid var(--secondary-color);
+    font-size: 1.3rem;
+    border-radius: 18px;
+    padding:0 0.5rem 0 0.5rem ;
+}
+
+.header .logo{
+    padding-top: 0.4rem;
+    font-size: 2.8rem;
+    letter-spacing: 0.3rem;
+    color: var(--tertiary-color);
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+.header_2{
+    width: 100%;
+    height: 14vh;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+.header_2 .headerToplayer{
+    background-color:var(--primary-color);
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2vw;
+    padding-right: 8vw;
+}
+.header_2 .logo{
+    width:auto ;
+    padding-top: 0.4rem;
+    font-size: 2.8rem;
+    letter-spacing: 0.3rem;
+    color: var(--tertiary-color);
+    font-family: 'Bebas Neue', sans-serif;
+}
+.header_2 .SearchButton{
+    background: var(--primary-color);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10px;
+}
+.header_2 img{
+    height: 2rem;
+    width: 2rem;
+}
+.header_2 .headerBottomlayer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--primary-color);
+    height: 45%;
+    width: 100%;
+}
+.header_2 .form2{
+    height: 85%;
+    width: 90%;
+    border: 5px solid var(--secondary-color);
+    border-radius: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_2 form select {
+    background-color:var(--tertiary-color);
+    color:var(--text-color);
+    width: 25%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.header_2 form input{
+    background-color:var(--text-color);
+    width: 75%;
+    height: 100%;
+    border: 0;
+    font-size: 1rem;
+    border-radius: 0 10px 10px 0;
+    padding-left: 0.5rem;
+    
+}
+.Body{
+    background: no-repeat center/cover;
+    margin-top: 0;
+}
+.showInfo{
+    margin: 0;
+    font-size: 16px;
+    padding: 16vh 5rem 0rem 5rem;
+    padding-top: 16vh;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: baseline;
+    align-items:center;
+    background-color: transparent;
+    backdrop-filter: blur(8px)  brightness(65%);
+}
+.showInfo .poster{
+    border-radius: 15px;
+    height: 74vh;
+    width: fit-content;
+    margin: 0rem 2rem 0rem 2rem;
+}
+
+.showInfo .details{
+    height: 100%;
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: column;
+}
+.showInfo .details .InfoBox{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.showInfo .details .title{
+    font-size: 1.5rem;
+    height: auto;
+    padding-bottom: 0.7rem;
+}
+.showInfo .details .Title{
+    padding-right: 0.5rem;
+    font-size: 1.5rem;
+    height: auto;
+    align-self: baseline;
+    padding-bottom: 0.7rem;
+}
+.showInfo .details .yearOfrelease{
+    font-size: 1.5rem;
+    padding-bottom: 0.7rem;
+    height: auto;
+}
+.showInfo .details .YearOfrelease{
+    padding-right: 0.5rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.7rem;
+    height: auto;
+    align-self: baseline;
+}
+.showInfo .details .discription{
+    font-size: 1rem;
+    padding-bottom: 0.7rem;
+    height: auto;
+}
+.showInfo .details .Discription{
+    padding-right: 0.5rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.7rem;
+    height: auto;
+    align-self: baseline;
+}
+.showInfo .details .rating{
+    font-size: 1.5rem;
+    padding-bottom: 0.7rem;
+    height: auto;
+}
+.showInfo .details .Rating{
+    padding-right: 0.5rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.7rem;
+    height: auto;
+    align-self: baseline;
+}
+.VideoPlay{
+    padding: 2rem 5rem 2rem 5rem;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color:transparent;
+    backdrop-filter: blur(8px) brightness(65%);
+}
+.VideoPlay .Videotrailers{
+    font-size: 2rem;
+    align-self: center;
+}
+.VideoPlay .videoContianer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.VideoPlay .videoContianer .VideoBox{
+    border-radius: 15px;
+    height: 15rem;
+    width: 26.66rem;
+
+}
+.footer{
+    height: 20vh;
+    padding-top: 3vh;
+    margin-bottom: 1vh;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: var(--text-color);
+    backdrop-filter: blur(8px) brightness(65%);
+}
+.footer .site{
+    font-size: 1rem;
+}
+.footer .footerLogo{
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--tertiary-color);
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+}
+.footer .Credit{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.footer .Credit .By{
+    font-size: 0.7rem;
+}
+.footer .Credit .createdBy{
+    font-size: 0.8rem;
+}
+@media(max-width: 1450px){
+    .VideoPlay .videoContianer .VideoBox{
+        height: 14.5rem;
+        width: 25.77rem;
+    }
+}
+@media(max-width: 1288px){
+    .header form {
+        width: 40%;
+    }
+    .header form select {
+        width: 28%;
+    }
+    .header form input {
+        width: 60%;
+        font-size: 1.1rem;
+    }
+    .showInfo{
+        padding: 16.5vh 5rem 0rem 5rem;
+    }
+    .showInfo .poster{
+        margin: 0rem 2rem 0rem 2rem;
+    }
+    .showInfo .details{
+        width: 72vw;
+    }
+    .VideoPlay .videoContianer .VideoBox{
+        height: 14rem;
+        width: 24.88rem;
+    }
+}
+@media(max-width: 1160px){
+    .showInfo{
+        padding: 17vh 4.5rem 0rem 4.5rem;
+    }
+    .showInfo .poster{
+        height: 70vh;
+        margin: 0rem 2rem 0 2rem;
+    }
+    .showInfo .details{
+        width: 74vw;
+    }
+    .VideoPlay .videoContianer .VideoBox{
+        height: 13.5rem;
+        width: 24rem;
+    }
+    .showInfo .details .title{
+        font-size: 1.3rem;
+        padding-bottom: 0.4rem;
+    }
+    .showInfo .details .Title{
+        padding-right: 0.4rem;
+        padding-bottom: 0.4rem;
+        font-size: 1.3rem;
+    }
+    .showInfo .details .yearOfrelease{
+        padding-bottom: 0.4rem;
+        font-size: 1.3rem;
+    }
+    .showInfo .details .YearOfrelease{
+        padding-bottom: 0.4rem;
+        padding-right: 0.4rem;
+        font-size: 1.3rem;
+    }
+    .showInfo .details .discription{
+        padding-bottom: 0.4rem;
+        font-size: 0.9rem;
+    }
+    .showInfo .details .Discription{
+        padding-right: 0.4rem;
+        padding-bottom: 0.4rem;
+        font-size: 1.3rem;
+    }
+    .showInfo .details .rating{
+        padding-bottom: 0.4rem;
+        font-size: 1.3rem;
+    }
+    .showInfo .details .Rating{
+        padding-right: 0.4rem;
+        padding-bottom: 0.4rem;
+        font-size: 1.3rem;
+    }
+    .VideoPlay{
+        padding: 1.5rem 4rem 1.5rem 4rem;
+        height: 55vh;
+    }
+    .VideoPlay .Videotrailers{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width: 1030px){
+    .header form {
+        width: 45%;
+    }
+    .header form select {
+        font-size: 1.1rem;
+    }
+    .header form input {
+        font-size: 1.1rem;
+    }
+    .header .logo{
+        font-size: 2.4rem;
+    }    
+    .showInfo{
+        padding: 17vh 4rem 0rem 4rem;
+    }    
+    .showInfo .poster{
+        height: 68vh;
+        margin: 0rem 1.3rem 0rem 1.3rem;
+    }
+    .showInfo .details{
+        width: 75vw;
+    }
+    .VideoPlay .videoContianer .VideoBox{
+        height: 13rem;
+        width: 23.11rem;
+    }
+}
+@media(max-width: 900px){   
+    .showInfo{
+        padding: 17vh 3rem 0rem 3rem;
+    }
+    .showInfo .poster{
+        height: 66vh;
+        margin: 0rem 1rem 0rem 1rem;
+    }
+    .showInfo .details{
+        width: 75vw;
+    }
+    .VideoPlay .videoContianer .VideoBox{
+        height: 12.5rem;
+        width: 22.22rem;
+    }
+}
+@media(max-width: 840px){
+    .showInfo{
+        padding: 17vh 2.5rem 0rem 2.5rem;
+    }
+    .showInfo .poster{
+        height: 64vh;
+        margin: 0rem 0.5rem 0rem 0.5rem;
+    }
+    .VideoPlay{
+        padding: 1.3rem 3.5rem 1.3rem 3.5rem;
+        height: 50vh;
+    }
+    .VideoPlay .videoContianer .VideoBox{
+        height: 12rem;
+        width: 21.33rem;
+    }
+}
+@media(max-width: 774px){ 
+    .showInfo{
+        padding: 16vh 5rem 0rem 5rem;
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        flex-direction: column;
+    }
+    .showInfo .poster{
+        height: 70vh;
+        align-self: baseline;
+        margin-bottom: 2rem;
+    }
+    .showInfo .details{
+        width: 85vw;
+    }
+    .header .logo{
+        font-size: 2.25rem;
+        letter-spacing: 0.27rem;
+    }
+    .header form {
+        width: 45%;
+        border-radius: 15px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        border: 5px solid var(--secondary-color);
+    }    
+    .header form select {
+        width: 35%;
+        border: 0;
+        border-radius: 10px 0 0 10px;
+        font-size: 0.9rem;
+    }
+    .header form input {
+        width: 65%;
+        border: 0;
+        border-radius: 0 10px 10px 0;
+        font-size: 0.95rem;
+    }
+}
+@media(max-width: 690px){
+    .VideoPlay .videoContianer .VideoBox{
+        height: 11.5rem;
+        width: 20.44rem;
+    }
+}
+@media(max-width: 600px){
+    .VideoPlay .videoContianer .VideoBox{
+        height: 11rem;
+        width: 19.55rem;
+    }
+    .showInfo{
+        padding: 5vh 2rem 0rem 2rem;
+        padding-top: 5vh;
+    }
+    .showInfo .poster{
+        height: 68vh;
+        align-self: baseline;
+        margin: 0rem 0.8rem 0rem 0.8rem;
+        margin-bottom: 2rem;
+    }
+    .showInfo .details{
+        width: 90vw;
+    }
+    .header_2 .logo{
+        font-size: 2.6rem;
+        letter-spacing: 0.28rem;
+    }
+    .footer{
+        padding-top: 2vh;
+        height: 18vh;
+    }
+    .footer .site{
+        font-size: 0.85rem;
+    }
+    .footer .footerLogo{
+        letter-spacing: 0.1rem;
+        font-size: 1.7rem;
+    }
+    .footer .Credit .By{
+        font-size: 0.6rem;
+    }
+    .footer .Credit .createdBy{
+        font-size: 0.7rem;
+    }
+    .header{
+        display: none;
+    }
+    .header_2{
+        display: flex;
+    }
+}
+@media(max-width: 515px){
+    .VideoPlay .videoContianer .VideoBox{
+        height: 10.5rem;
+        width: 18.66rem;
+    }
+    .showInfo{
+        padding: 4.5vh 1.5rem 0rem 1.5rem;
+    }
+    .showInfo .poster{
+        height: 65vh;
+        align-self: baseline;
+        margin: 0rem 0.6rem 0rem 0.6rem;
+        margin-bottom: 1.8rem;
+    }
+    .showInfo .details{
+        width: 95vw;
+    }
+    .header_2 .logo{
+        font-size: 2.4rem;
+        letter-spacing: 0.26rem;
+    }
+}
+@media(max-width:430px){
+
+    .VideoPlay .videoContianer .VideoBox{
+        height: 9rem;
+        width: 16rem;
+    }
+    .showInfo{
+        padding: 4vh 1rem 0rem 1rem;
+    }
+    .showInfo .poster{
+        height: 61vh;
+        margin: 0rem 0.4rem 0rem 0.4rem;
+        align-self: baseline;
+        margin-bottom: 1.6rem;
+    }
+    .header_2 .logo{
+        font-size: 2.2rem;
+        letter-spacing: 0.25rem;
+    }
+    .showInfo .details .title{
+        font-size: 1.1rem;
+        padding-bottom: 0.25rem;
+    }
+    .showInfo .details .Title{
+        padding-right: 0.25rem;
+        padding-bottom: 0.25rem;
+        font-size: 1.1rem;
+    }
+    .showInfo .details .yearOfrelease{
+        padding-bottom: 0.25rem;
+        font-size: 1.1rem;
+    }
+    .showInfo .details .YearOfrelease{
+        padding-bottom: 0.25rem;
+        padding-right: 0.25rem;
+        font-size: 1.1rem;
+    }
+    .showInfo .details .discription{
+        padding-bottom: 0.25rem;
+        font-size: 0.65rem;
+    }
+    .showInfo .details .Discription{
+        padding-right: 0.25rem;
+        padding-bottom: 0.25rem;
+        font-size: 1.1rem;
+    }
+    .showInfo .details .rating{
+        padding-bottom: 0.25rem;
+        font-size: 1.1rem;
+    }
+    .showInfo .details .Rating{
+        padding-right: 0.25rem;
+        padding-bottom: 0.25rem;
+        font-size: 1.1rem;
+    }
+    .VideoPlay{
+        padding: 1rem 3rem 1rem 3rem;
+        height: 45vh;
+    }
+    .VideoPlay .Videotrailers{
+        font-size: 1.2rem;
+    }
+}   
+@media(max-width: 380px){
+    .header_2 .logo{
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+}   
+@media(max-width: 340px){
+    .VideoPlay .videoContianer .VideoBox{
+        height: 8rem;
+        width: 14.222rem;
+    }
+    .VideoPlay{
+        padding: 1rem 2.5rem 1rem 2.5rem;
+        height: 40vh;
+    }
+    .showInfo{
+        padding: 3.5vh 0.7rem 0rem 0.7rem;
+    }
+    .showInfo .poster{
+        height: 56vh;
+        align-self: baseline;
+        margin: 0rem 0.2rem 0rem 0.2rem;
+        margin-bottom: 1.4rem;
+    }
+    .header_2 .logo{
+        font-size: 1.8rem;
+        letter-spacing: 0.18rem;
+    }
+    .footer{
+        padding-top: 2vh;
+        height: 16vh;
+    }
+    .footer .site{
+        font-size: 0.75rem;
+    }
+    .footer .footerLogo{
+        font-size: 1.5rem;
+    }
+    .footer .Credit .By{
+        font-size: 0.5rem;
+    }
+    .footer .Credit .createdBy{
+        font-size: 0.6rem;
+    }
+}
+@media(max-width: 320px){
+    .header_2 .logo{
+        font-size: 1.6rem;
+        letter-spacing: 0.17rem;
+    }
+}
+@media(max-width: 280px){
+    .VideoPlay .videoContianer .VideoBox{
+        height: 6.5rem;
+        width: 11.55rem;
+    }
+    .showInfo{
+        padding: 3vh 0.5rem 0rem 0.5rem;
+    }
+    .showInfo .poster{
+        height: 50vh;
+        align-self: baseline;
+        margin-bottom: 2rem;
+        margin: 0rem 0.1rem 0rem 0.1rem;
+    }   
+}
