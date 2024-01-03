@@ -47,7 +47,7 @@ document.addEventListener(`DOMContentLoaded`, async () => {
         select: selected,
       });
       if (!response.ok) {
-        console.log('ERROR: can\'t connect to user');
+        console.log(`ERROR: can't connect to user`);
       }
       window.location.href = '/';
     } catch (error) {
