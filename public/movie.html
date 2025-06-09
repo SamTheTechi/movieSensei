@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,17 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <div class="header">
         <h2 class="logo">MovieSensei</h2>
         <form class="form">
             <select name="SelectBtn" class="selecter">
                 <option value="multi">Multi</option>
-                <option value="Movie">Movie</option>
-                <option value="TV">TV</option>
-            <input type="text" name="UserBtn" class="Userinput" placeholder=" Search">
+                <option value="movie">Movie</option>
+                <option value="tv">TV</option>
             </select>
+            <input type="text" name="UserBtn" class="Userinput" placeholder="Search">
         </form>
     </div>
 
@@ -31,23 +33,23 @@
             <button class="SearchButton"><img src="./magnifier-white.png" alt="</>"></button>
         </div>
         <div class="headerBottomlayer">
-            <form class="form2"> 
+            <form class="form2">
                 <select name="SelectBtn" class="selecter">
                     <option value="multi">Multi</option>
                     <option value="movie">Movie</option>
                     <option value="tv">TV</option>
-                <input type="text" name="UserBtn" class="Userinput" placeholder=" Search">
                 </select>
+                <input type="text" name="UserBtn" class="Userinput" placeholder="Search">
             </form>
         </div>
     </div>
-    
+
     <div class="Body">
         <div class="showInfo">
             <img src="" alt="" class="poster">
             <div class="details">
                 <div class="InfoBox">
-                    <div class="Title">Title:</div> 
+                    <div class="Title">Title:</div>
                     <div class="title"></div>
                 </div>
                 <div class="InfoBox">
@@ -62,36 +64,31 @@
                     <div class="Rating">Rating:</div>
                     <div class="rating"></div>
                 </div>
-                <!-- <div class="InfoBox">
-                    <div class="Genres"></div>
-                    <div class="genres"></div>
-                </div> -->
+
             </div>
         </div>
 
         <div class="VideoPlay">
             <div class="Videotrailers">Trailer</div>
             <div class="videoContianer">
-                <iframe class="VideoBox" width="1200" height="450" src="" frameborder="0" allowfullscreen></iframe>  
-            </div>    
+                <iframe class="VideoBox" width="1200" height="450" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
-         
+
         <div class="footer">
             <div class="padding"></div>
-            <div class="site">Website is Currently under Construction !</div>
             <div class="footerLogo">MovieSensei</div>
             <div class="Credit">
                 <div class="By">Created By</div>
                 <div class="createdBy">SamTheProBot</div>
-            </div>   
+            </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-    ></script>
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./movie.js"></script>
 </body>
+
 </html>
