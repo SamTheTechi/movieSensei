@@ -3,6 +3,6 @@ const router = express.Router();
 const { Home, Detail } = require("../controllers/static");
 
 router.get("/", Home);
-router.get("/details", Detail);
+router.get("/details/:id", Detail);
 
 module.exports = router;
