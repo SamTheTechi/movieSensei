@@ -25,7 +25,7 @@ const Shows = async (req, res) => {
       );
       const response = await popular.json();
 
-      await redis.set(key, JSON.stringify(response), "EX", 60 * 60 * 9);
+      await redis.set(key, JSON.stringify(response), "EX", 60 * 60 * 6);
 
       return res.status(200).json({ data: response });
     } else {
@@ -50,7 +50,7 @@ const Shows = async (req, res) => {
 
       const response = await info.json();
 
-      await redis.set(key, JSON.stringify(response), "EX", 60 * 60 * 6);
+      await redis.set(key, JSON.stringify(response), "EX", 60 * 60 * 9);
 
       return res.status(200).json({ data: response });
     }

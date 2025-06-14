@@ -1,25 +1,24 @@
 require("dotenv").config();
+const path = require("path");
 const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
 
 const app = express();
 
 const apiRouter = require("./router/api");
 const staticRouter = require("./router/static");
 
-const helmet = require("helmet");
-const cors = require("cors");
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static("./public"));
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      scriptSrc: ["'self'", "'unsafe-inline'"],
-      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      connectSrc: ["'self'"],
       imgSrc: ["'self'", "data:", "https://image.tmdb.org"],
-      frameSrc: ["'self'", "https://www.youtube.com"],
+      frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
     },
   }),
