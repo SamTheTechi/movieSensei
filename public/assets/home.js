@@ -1,13 +1,17 @@
 const forms = document.querySelectorAll(`.form, .form2`);
 const Bodywrap = document.querySelector(`.Bodywrap`);
 const selectDOM = document.querySelector(`.selecter`);
+const headerBottomlayer = document.querySelector(".headerBottomlayer");
+const SearchButton = document.querySelector(".SearchButton");
 
-// on initial load of html
 document.addEventListener(`DOMContentLoaded`, async () => {
   const { title, type } = extractInfo();
+  let currentType = type || "";
   if (!title || !type) {
+    currentType = selectDOM?.value || "";
     await loadData("", "");
   } else {
+    currentType = type;
     await loadData(`${title}`, `${type}`);
   }
 
@@ -16,6 +20,7 @@ document.addEventListener(`DOMContentLoaded`, async () => {
       e.preventDefault();
       const Userinput = document.querySelector(".form .Userinput").value;
       const select = document.querySelector(".form .selecter").value;
+      currentType = select;
       window.location.href = `/?title=${Userinput}&type=${select}`;
     });
   });
@@ -25,7 +30,7 @@ document.addEventListener(`DOMContentLoaded`, async () => {
 
     if (clickedMovieContainer) {
       const movieId = clickedMovieContainer.getAttribute("movie_id");
-      const selected = selectDOM.value;
+      const selected = currentType || selectDOM.value;
 
       try {
         window.location.href = `/details/${movieId}?type=${selected}`;
@@ -33,30 +38,33 @@ document.addEventListener(`DOMContentLoaded`, async () => {
         console.error(error);
       }
     }
+  });
 
-    function HeaderPadding() {
-      const viewPortWidth = window.innerWidth;
-      if (viewPortWidth <= 600) {
+  function HeaderPadding() {
+    const viewPortWidth = window.innerWidth;
+    if (viewPortWidth <= 600) {
+      headerBottomlayer.style.display = `none`;
+      Bodywrap.style.paddingTop = `0vh`;
+    } else {
+      Bodywrap.style.paddingTop = `14vh`;
+      headerBottomlayer.style.display = ``;
+    }
+  }
+
+  if (SearchButton && headerBottomlayer) {
+    SearchButton.addEventListener(`click`, () => {
+      if (headerBottomlayer.style.display === `none`) {
+        headerBottomlayer.style.display = `flex`;
+        Bodywrap.style.paddingTop = `5vh`;
+      } else {
         headerBottomlayer.style.display = `none`;
         Bodywrap.style.paddingTop = `0vh`;
-        SearchButton.addEventListener(`click`, () => {
-          // Toggle header visibility on small screens
-          if (headerBottomlayer.style.display === `none`) {
-            headerBottomlayer.style.display = `flex`;
-            Bodywrap.style.paddingTop = `5vh`;
-          } else {
-            headerBottomlayer.style.display = `none`;
-            Bodywrap.style.paddingTop = `0vh`;
-          }
-        });
-      } else {
-        Bodywrap.style.paddingTop = `14vh`;
       }
-    }
+    });
+  }
 
-    HeaderPadding();
-    window.addEventListener("resize", HeaderPadding);
-  });
+  HeaderPadding();
+  window.addEventListener("resize", HeaderPadding);
 });
 
 // helper functions

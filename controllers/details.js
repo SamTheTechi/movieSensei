@@ -1,9 +1,9 @@
 const { BaseURL } = require("../util/baseurl");
 const redis = require("../util/redis");
+const fetchJson = require("../util/fetchjson");
 
 const Detail = async (req, res) => {
   const { id, type = "movie" } = req.body;
-  console;
 
   if (!id) {
     return res.status(400).json({ error: "movieId is required" });
@@ -17,32 +17,28 @@ const Detail = async (req, res) => {
       return res.status(200).json({ data: JSON.parse(cached) });
     }
 
-    const [videoRes, dataRes] = await Promise.all([
-      fetch(`${BaseURL}/${type}/${id}/videos?language=en-US`, {
+    const headers = {
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
+    };
+
+    const [videoResponse, response] = await Promise.all([
+      fetchJson(`${BaseURL}/${type}/${id}/videos?language=en-US`, {
         method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
-        },
+        headers,
       }),
-      fetch(`${BaseURL}/${type}/${id}?language=en-US`, {
+      fetchJson(`${BaseURL}/${type}/${id}?language=en-US`, {
         method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
-        },
+        headers,
       }),
     ]);
-
-    const videoResponse = await videoRes.json();
-    const response = await dataRes.json();
 
     const object = {
       response,
       videoResponse,
     };
 
-    await redis.set(key, JSON.stringify(object), "EX", 60 * 60 * 24);
+    await redis.set(key, JSON.stringify(object), "EX", 60 * 60 * 24 * 7);
 
     return res.status(201).json({
       data: object,
